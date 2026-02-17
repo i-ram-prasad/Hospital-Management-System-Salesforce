@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Doctor__c</members>
+        <members>Appointment__c</members>
+        <members>Medical_Record__c</members>
+        <members>Invoice__c</members>
+        <members>Contact</members> <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>Doctor__c</members>
+        <members>Appointment__c</members>
+        <members>Medical_Record__c</members>
+        <members>Invoice__c</members>
+        <name>CustomTab</name>
+    </types>
+
+    <types>
+        <members>Doctor__c-Doctor Layout</members>
+        <members>Appointment__c-Appointment Layout</members>
+        <members>Medical_Record__c-Medical Record Layout</members>
+        <members>Invoice__c-Invoice Layout</members>
+        <members>Contact-Contact Layout</members> 
+        <name>Layout</name>
+    </types>
+
+    <types>
+        <members>Contact.Patient_ID__c</members> <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>*</members> <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <version>65.0</version>
+</Package>

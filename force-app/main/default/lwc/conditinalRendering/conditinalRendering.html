@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-card slds-p-around_small">
+        <lightning-button variant="brand" label="Brand" title="Option 1" onclick={handleOptionClick} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Brand" title="Option 2" onclick={handleOption2Click} class="slds-m-left_x-small"></lightning-button>
+        <!-- <lightning-button variant="brand" label="Brand" title="Option 3" class="slds-m-left_x-small"></lightning-button> -->
+
+        <template lwc:if={dislaySetting}>
+            <template lwc:if={displayFirst}>
+                <div class="slds-m-top_medium slds-m-bottom_x-large">
+                    <p class="slds-m-bottom_medium">
+                        Button-icon-statefuls with the <code>variant</code> attribute set to
+                        <code>border-inverse</code>.
+                    </p>
+
+                    <!-- Simple -->
+                    <div class="slds-p-around_medium lgc-bg-inverse">
+                        <lightning-button-icon-stateful icon-name="utility:like" variant="border-inverse"
+                            selected={likeStateInverse} onclick={handleLikeButtonInverseClick}
+                            alternative-text="Like"></lightning-button-icon-stateful>
+                        <lightning-button-icon-stateful icon-name="utility:answer" variant="border-inverse"
+                            selected={answerStateInverse} onclick={handleAnswerButtonInverseClick}
+                            alternative-text="Answer" class="slds-m-left_xx-small"></lightning-button-icon-stateful>
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={displaySecond}>
+                <div class="slds-m-top_medium slds-m-bottom_x-large">
+                    <p class="slds-m-bottom_medium">
+                        Button-icon-statefuls with the <code>variant</code> attribute set to <code>border-filled</code>.
+                    </p>
+
+                    <!-- Disabled -->
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-button-icon-stateful icon-name="utility:like" variant="border-filled"
+                            selected={likeStateFilled} onclick={handleLikeButtonFilledClick}
+                            alternative-text="Like"></lightning-button-icon-stateful>
+                        <lightning-button-icon-stateful icon-name="utility:answer" variant="border-filled"
+                            selected={answerStateFilled} onclick={handleAnswerButtonFilledClick}
+                            alternative-text="Answer" class="slds-m-left_xx-small"></lightning-button-icon-stateful>
+                    </div>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>
