@@ -37,7 +37,7 @@ A robust, full-stack Salesforce application designed to streamline hospital oper
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/Hospital-Management-System-Salesforce.git](https://github.com/YOUR_USERNAME/Hospital-Management-System-Salesforce.git)
+    git clone https://github.com/i-ram-prasad/Hospital-Management-System-Salesforce.git
     cd Hospital-Management-System-Salesforce
     ```
 
