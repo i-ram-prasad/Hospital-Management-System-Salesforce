@@ -4,27 +4,42 @@ A robust, full-stack Salesforce application designed to streamline hospital oper
 
 ## 🚀 Key Features
 
-### 1. Smart Appointment Scheduling (Apex Trigger)
-* **Conflict Detection:** Implemented a `before insert/update` Apex Trigger to strictly prevent **Double Booking**. The system checks the database for existing appointments at the same time for the same doctor and blocks the save operation with a custom error.
-* **Shift Enforcement:** Validation Rules ensure appointments can only be booked during a Doctor's defined working hours (`Shift_Start_Time__c` and `Shift_End_Time__c`).
+### 1. 👨‍⚕️ Interactive Doctor Console (LWC)
+* **Custom Dashboard:** Engineered a responsive **Lightning Web Component (LWC)** that serves as a command center for doctors.
+* **Real-Time Actions:** Doctors can view "Pending Approval" appointments and approve or reject them instantly without navigating multiple tabs.
+* **Backend Logic:** Powered by an **Apex Controller** using `@AuraEnabled(cacheable=true)` for high-performance data retrieval.
 
-### 2. Data Model & Architecture
-* **Patient Management:** Customized the standard `Contact` object to track patient history.
-* **Doctor Management:** Custom object with specialized fields for Specialization and Consultation Fees.
-* **Clinical & Financial Data:**
-    * **Medical Records:** Master-Detail relationship to Patient ensures strict data ownership.
-    * **Invoices:** Master-Detail relationship to Appointment allows for Roll-Up Summaries of revenue.
-* **Junction Object:** The `Appointment` object serves as the connecting link between Doctors and Patients.
+### 2. ⚡ Intelligent Automation (Flow & Apex)
+* **Smart Email Notifications:** Built a **Record-Triggered Flow** that automatically sends confirmation emails to patients *only* when their appointment status changes to "Confirmed."
+* **Conflict Detection:** Implemented a `before insert/update` **Apex Trigger** to strictly prevent **Double Booking**. The system checks the database for existing appointments at the same time for the same doctor and blocks the save operation.
 
-### 3. Automation & Logic
-* **Auto-Numbering:** Appointments are automatically assigned unique IDs (e.g., `APT-0001`) for easy reference.
-* **Status Workflow:** Tracks appointments from `Pending` -> `Confirmed` -> `Completed` -> `Cancelled`.
+### 3. 🛡️ Data Integrity & Security
+* **Validation Rules:** * **Shift Enforcement:** Ensures appointments are only booked during a Doctor's working hours.
+    * **Data Completeness:** Prevents doctors from confirming an appointment if the Patient is missing an email address, ensuring communication lines remain open.
+* **Database Architecture:**
+    * **Master-Detail Relationships:** utilized for strict data ownership (Patient → Medical Records).
+    * **Junction Object:** The `Appointment` object connects Doctors and Patients, enabling many-to-many relationships.
 
 ## 🛠️ Tech Stack
-* **Language:** Apex (Triggers & Handlers), SOQL
-* **Metadata:** Custom Objects, Fields, Validation Rules, Page Layouts
+* **Frontend:** Lightning Web Components (LWC), JavaScript (ES6+), HTML/CSS
+* **Backend:** Apex (Triggers & Controllers), SOQL
+* **Automation:** Salesforce Flow Builder, Validation Rules
 * **Tools:** VS Code, Salesforce CLI (SFDX), Git/GitHub
 * **CI/CD:** Metadata-driven deployment via `package.xml`
+
+## 📸 Project Screenshots
+
+### 1. Doctor's Console (LWC)
+*A custom UI allowing doctors to manage their schedule instantly.*
+<img width="800" height="500" alt="Doctor Console Dashboard" src="https://github.com/user-attachments/assets/bfebaa40-70bc-4f76-a190-98c758c3d7c7" />
+
+### 2. Automation Logic (Flow)
+*Backend automation that triggers email confirmations upon approval.*
+<img width="800" height="600" alt="Flow Builder Logic" src="https://github.com/user-attachments/assets/f98bc460-3020-4262-93f4-af0dba5a4fa1" />
+
+### 3. Database Schema
+*A robust data model linking Patients, Doctors, and Medical Records.*
+<img width="800" height="400" alt="Schema Builder" src="https://github.com/user-attachments/assets/de42d595-141f-4264-91f4-f102a5187896" />
 
 ## 📦 Data Schema
 * **Doctor__c** (Parent to Appointment)
@@ -33,25 +48,11 @@ A robust, full-stack Salesforce application designed to streamline hospital oper
 * **Medical_Record__c** (Child of Contact)
 * **Invoice__c** (Child of Appointment)
 
-## 📸 Project Screenshots
-
-### 1. Doctor's Console (LWC)
-*A custom Lightning Web Component allowing doctors to approve/reject appointments instantly.*
-![Doctor Console](./assets/doctor-console.png)
-
-### 2. Automation Logic (Flow)
-*Backend automation that triggers email confirmations upon approval.*
-![Flow Diagram](./assets/flow-diagram.png)
-
-### 3. Database Schema
-*A robust data model linking Patients, Doctors, and Medical Records.*
-![Schema Builder](./assets/schema.png)
-
 ## 🔧 Installation & Setup
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/i-ram-prasad/Hospital-Management-System-Salesforce.git
+    git clone [https://github.com/i-ram-prasad/Hospital-Management-System-Salesforce.git](https://github.com/i-ram-prasad/Hospital-Management-System-Salesforce.git)
     cd Hospital-Management-System-Salesforce
     ```
 
@@ -66,9 +67,9 @@ A robust, full-stack Salesforce application designed to streamline hospital oper
     ```
 
 ## 🔮 Future Enhancements
-* **LWC Patient Portal:** Building a Lightning Web Component for patients to view their own history.
-* **Email Notifications:** Automating confirmation emails using Salesforce Flow.
-* **Reports & Dashboards:** Visualizing hospital revenue and doctor utilization.
+* **Experience Cloud Portal:** Building a secure site for patients to log in, view their history, and book appointments self-service.
+* **REST API Integration:** Connecting with external pharmacy systems to sync prescription data.
+* **Analytics Studio:** Creating visual dashboards to track hospital revenue and doctor utilization rates.
 
 ---
-*Created by Ram Prasad - *
+*Created by Ram Prasad - Salesforce Developer Portfolio*
