@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="👨‍⚕️ Doctor's Appointment Console" icon-name="standard:medical_history">
+        
+        <div class="slds-m-around_medium">
+            <template if:true={tableData}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={tableData} 
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error slds-p-around_medium">
+                    Error loading appointments: {error.body.message}
+                </p>
+            </template>
+            
+            <template if:false={tableData}>
+                <div class="slds-text-align_center slds-text-color_weak slds-p-around_medium">
+                    No pending appointments found.
+                </div>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,9 +1,0 @@
-.wrap { padding: 1rem; }
-.hero { text-align: center; margin-bottom: 1rem; }
-.subtitle { color: #5f6a7d; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-}
-.list { margin: 0; padding-left: 1.2rem; }
