@@ -72,4 +72,4 @@ A robust, full-stack Salesforce application designed to streamline hospital oper
 * **Analytics Studio:** Creating visual dashboards to track hospital revenue and doctor utilization rates.
 
 ---
-*Created by Ram Prasad - Salesforce Developer Portfolio*
+*Created by Ram Prasad - Salesforce Developer*
