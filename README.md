@@ -33,6 +33,20 @@ A robust, full-stack Salesforce application designed to streamline hospital oper
 * **Medical_Record__c** (Child of Contact)
 * **Invoice__c** (Child of Appointment)
 
+## 📸 Project Screenshots
+
+### 1. Doctor's Console (LWC)
+*A custom Lightning Web Component allowing doctors to approve/reject appointments instantly.*
+![Doctor Console](./assets/doctor-console.png)
+
+### 2. Automation Logic (Flow)
+*Backend automation that triggers email confirmations upon approval.*
+![Flow Diagram](./assets/flow-diagram.png)
+
+### 3. Database Schema
+*A robust data model linking Patients, Doctors, and Medical Records.*
+![Schema Builder](./assets/schema.png)
+
 ## 🔧 Installation & Setup
 
 1.  **Clone the Repository**
